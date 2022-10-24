@@ -29,7 +29,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>samimtest</title>
+  <title>Samim Test</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -38,8 +38,59 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+  <!-- Here are other app scripts added by developers -->
+  <script defer src="index.dart.js?version=1" type="application/javascript"></script>
+
+  <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid orange;
+      border-right: 16px solid green;
+      border-bottom: 16px solid green;
+      border-left: 16px solid green;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    </style>
 </head>
 <body>
+<div class="loading">
+  <div class="loader"></div>
+</div>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

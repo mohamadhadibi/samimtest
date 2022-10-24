@@ -55,3 +55,9 @@ flutter:
         - asset: res/font/iransans/medium.ttf
         - asset: res/font/iransans/bold.ttf
           weight: 700
+
+    - family: SF-Pro-Display
+      fonts:
+        - asset: res/font/sf-pro-display/regular.otf
+        - asset: res/font/sf-pro-display/bold.otf
+          weight: 700
