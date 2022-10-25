@@ -44,6 +44,7 @@ class _TextInputAreaState extends State<TextInputArea> {
           hintStyle: Theme.of(context).textTheme.bodyText1,
           contentPadding: const EdgeInsets.all(4),
         ),
+        autovalidateMode: AutovalidateMode.onUserInteraction,
       ),
     );
   }
