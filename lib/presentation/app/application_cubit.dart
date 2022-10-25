@@ -12,7 +12,7 @@ part 'application_state.dart';
 class ApplicationCubit extends Cubit<ApplicationState> {
   ApplicationCubit()
       : super(ApplicationState(
-            langList[defaultLanguageIndex], currentThemeMode));
+            langList[currentLanguageIndex], currentThemeMode));
 
   List<Locale> localeList = [
     const Locale('fa'),

@@ -1,3 +1,18 @@
 {
-  "app_name": "Shamim Test"
+  "app_name": "Samim Test",
+  "header_login": "Login",
+  "header_country_list": "Countries",
+  "g_email": "Email",
+  "g_password": "Password",
+  "g_button_login": "Login",
+  "error_validation_required_field": "Required",
+  "error_validation_not_valid": "Not valid",
+  "error_password_not_valid": "must contain a-z|A-Z >7 chars",
+  "error_internet_connection": "No internet connection!",
+  "error_disabled_user": "User is disabled!",
+  "error_invalid_input": "Input is invalid!",
+  "error_missed_input": "Input is missed!",
+  "error_authorization": "Authorization failed!",
+  "error_not_found": "Response not found!",
+  "error_unknown": "Unknown error happened!"
 }

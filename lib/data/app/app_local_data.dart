@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import '../../core/domain/language/entity/language.dart';
 
 ThemeMode currentThemeMode = ThemeMode.light;
-Language currentLanguage = langList[defaultLanguageIndex];
+Language currentLanguage = langList[currentLanguageIndex];
+int currentLanguageIndex = languageFarsi;
 
 const int languageFarsi = 0;
 const int languageEnglish = 1;
-const int defaultLanguageIndex = languageFarsi;
 
 var langList = [
   const Language(

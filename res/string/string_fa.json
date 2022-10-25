@@ -1,3 +1,18 @@
 {
-  "app_name": "صمیم تست"
+  "app_name": "صمیم تست",
+  "header_login": "ورود",
+  "header_country_list": "کشورها",
+  "g_email": "ایمیل",
+  "g_password": "پسورد",
+  "g_button_login": "ورود",
+  "error_validation_required_field": "الزامیست",
+  "error_validation_not_valid": "نامعتبر است",
+  "error_password_not_valid": "باید شامل a-z|A-Z و >7 کارکتر باشد",
+  "error_internet_connection": "عدم دسترسی به اینترنت!",
+  "error_disabled_user": "کاربر غیرفعال است!",
+  "error_invalid_input": "ورودی معتبر نیست!",
+  "error_missed_input": "همه موارد خواسته شده ارسال نشده اند!",
+  "error_authorization": "هویت تایید نشد!",
+  "error_not_found": "پاسخی یافت نشد!",
+  "error_unknown": "خطای نامشخصی رخ داده است!"
 }

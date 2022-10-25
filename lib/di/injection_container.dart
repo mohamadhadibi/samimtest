@@ -10,7 +10,7 @@ final get = GetIt.instance;
 
 init() async {
   // external :
-  await getExternal();
+  getExternal();
 
   // bloc :
   getBloc();

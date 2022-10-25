@@ -13,7 +13,22 @@ class $en extends MessageLookupByLibrary {
   get localeName => 'en';
   
   final messages = {
-		"app_name" : MessageLookupByLibrary.simpleMessage("Shamim Test"),
+		"app_name" : MessageLookupByLibrary.simpleMessage("Samim Test"),
+		"header_login" : MessageLookupByLibrary.simpleMessage("Login"),
+		"header_country_list" : MessageLookupByLibrary.simpleMessage("Countries"),
+		"g_email" : MessageLookupByLibrary.simpleMessage("Email"),
+		"g_password" : MessageLookupByLibrary.simpleMessage("Password"),
+		"g_button_login" : MessageLookupByLibrary.simpleMessage("Login"),
+		"error_validation_required_field" : MessageLookupByLibrary.simpleMessage("Required"),
+		"error_validation_not_valid" : MessageLookupByLibrary.simpleMessage("Not valid"),
+		"error_password_not_valid" : MessageLookupByLibrary.simpleMessage("must contain a-z|A-Z >7 chars"),
+		"error_internet_connection" : MessageLookupByLibrary.simpleMessage("No internet connection!"),
+		"error_disabled_user" : MessageLookupByLibrary.simpleMessage("User is disabled!"),
+		"error_invalid_input" : MessageLookupByLibrary.simpleMessage("Input is invalid!"),
+		"error_missed_input" : MessageLookupByLibrary.simpleMessage("Input is missed!"),
+		"error_authorization" : MessageLookupByLibrary.simpleMessage("Authorization failed!"),
+		"error_not_found" : MessageLookupByLibrary.simpleMessage("Response not found!"),
+		"error_unknown" : MessageLookupByLibrary.simpleMessage("Unknown error happened!"),
 
   };
 }
@@ -25,6 +40,21 @@ class $fa extends MessageLookupByLibrary {
   
   final messages = {
 		"app_name" : MessageLookupByLibrary.simpleMessage("صمیم تست"),
+		"header_login" : MessageLookupByLibrary.simpleMessage("ورود"),
+		"header_country_list" : MessageLookupByLibrary.simpleMessage("کشورها"),
+		"g_email" : MessageLookupByLibrary.simpleMessage("ایمیل"),
+		"g_password" : MessageLookupByLibrary.simpleMessage("پسورد"),
+		"g_button_login" : MessageLookupByLibrary.simpleMessage("ورود"),
+		"error_validation_required_field" : MessageLookupByLibrary.simpleMessage("الزامیست"),
+		"error_validation_not_valid" : MessageLookupByLibrary.simpleMessage("نامعتبر است"),
+		"error_password_not_valid" : MessageLookupByLibrary.simpleMessage("باید شامل a-z|A-Z و >7 کارکتر باشد"),
+		"error_internet_connection" : MessageLookupByLibrary.simpleMessage("عدم دسترسی به اینترنت!"),
+		"error_disabled_user" : MessageLookupByLibrary.simpleMessage("کاربر غیرفعال است!"),
+		"error_invalid_input" : MessageLookupByLibrary.simpleMessage("ورودی معتبر نیست!"),
+		"error_missed_input" : MessageLookupByLibrary.simpleMessage("همه موارد خواسته شده ارسال نشده اند!"),
+		"error_authorization" : MessageLookupByLibrary.simpleMessage("هویت تایید نشد!"),
+		"error_not_found" : MessageLookupByLibrary.simpleMessage("پاسخی یافت نشد!"),
+		"error_unknown" : MessageLookupByLibrary.simpleMessage("خطای نامشخصی رخ داده است!"),
 
   };
 }
