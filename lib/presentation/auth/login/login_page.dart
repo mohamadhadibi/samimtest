@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/utils/debouncer.dart';
 import '../../../di/injection_container.dart';
 import '../../../generated/i18n.dart';
 import '../../app/resources/routs.dart';
@@ -21,6 +22,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final LoginCubit _cubit = get<LoginCubit>();
   final _loginFormKey = GlobalKey<FormState>();
+  final Debouncer onChangeDebouncer = Debouncer();
+
+  bool isPasswordValid=false,isEmailValid = false;
 
   @override
   Widget build(BuildContext context) {
@@ -62,14 +66,17 @@ class _LoginPageState extends State<LoginPage> {
                                   onChanged: _cubit.setEmail,
                                   validator: (String? email) {
                                     if (email == null) {
+                                      changeEmailValidStatus(false);
                                       return S
                                           .of(context)
                                           .error_validation_required_field;
                                     } else if (!(email.isEmail)) {
+                                      changeEmailValidStatus(false);
                                       return S
                                           .of(context)
                                           .error_validation_not_valid;
                                     }
+                                    changeEmailValidStatus(true);
                                   },
                                 ),
                                 Container(
@@ -86,14 +93,17 @@ class _LoginPageState extends State<LoginPage> {
                                   onChanged: _cubit.setPassword,
                                   validator: (String? password) {
                                     if (password == null) {
+                                      changePasswordValidStatus(false);
                                       return S
                                           .of(context)
                                           .error_validation_required_field;
                                     } else if (!(password.isPassword)) {
+                                      changePasswordValidStatus(false);
                                       return S
                                           .of(context)
                                           .error_password_not_valid;
                                     }
+                                    changePasswordValidStatus(true);
                                   },
                                 ),
                               ]),
@@ -113,6 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 200,
                     margin: const EdgeInsets.all(16),
                     child: ProgressButton(
+                      isEnable: (isPasswordValid && isEmailValid),
                       isLoading: state is StateLoading,
                       onPressed: () {
                         if (_loginFormKey.currentState != null) {
@@ -140,11 +151,26 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  changeEmailValidStatus(bool enable) {
+    onChangeDebouncer.debounce(() => setState(()=> isEmailValid = enable));
+  }
+
+  changePasswordValidStatus(bool enable) {
+    onChangeDebouncer.debounce(() => setState(()=> isPasswordValid = enable));
+  }
+
   _navigateToCountryListPage() {
     Navigator.pushNamedAndRemoveUntil(
       context,
       routeCountries,
           (r) => false,
     );
+  }
+
+  @override
+  void dispose() {
+    onChangeDebouncer.flush();
+    _cubit.close();
+    super.dispose();
   }
 }

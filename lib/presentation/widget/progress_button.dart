@@ -43,10 +43,14 @@ class ProgressButton extends StatelessWidget {
                 (isEnable && isLoading == false) ? onPressed() : null,
             child: Text(
               text,
-              style: Theme.of(context)
+              style: (isEnable)?Theme.of(context)
                   .textTheme
                   .button!
-                  .copyWith(color: textColor ?? AppColors.white),
+                  .copyWith(color: textColor ?? AppColors.white)
+              :Theme.of(context)
+                  .textTheme
+                  .button!
+                  .copyWith(color: textColor ?? AppColors.option),
             ),
           ),
         ),
