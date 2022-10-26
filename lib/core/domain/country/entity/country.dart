@@ -31,4 +31,16 @@ class Country extends Equatable {
   @override
   int get hashCode => name.hashCode;
 
+  factory Country.fromJson(Map<String, dynamic> json) => Country(
+    capital: json["capital"],
+    flagUrl: json["flagUrl"],
+    name: json["name"],
+  );
+
+  Map<String, dynamic> toJson() =>
+      {
+        "capital": capital,
+        "flagUrl": flagUrl,
+        "name": name,
+      };
 }
