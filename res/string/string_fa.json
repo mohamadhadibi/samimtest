@@ -5,6 +5,7 @@
   "g_email": "ایمیل",
   "g_password": "پسورد",
   "g_button_login": "ورود",
+  "g_button_retry": "تلاش مجدد",
   "error_validation_required_field": "الزامیست",
   "error_validation_not_valid": "نامعتبر است",
   "error_password_not_valid": "باید شامل a-z|A-Z و >7 کارکتر باشد",

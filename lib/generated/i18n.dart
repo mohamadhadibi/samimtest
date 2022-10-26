@@ -60,6 +60,10 @@ class S {
     return Intl.message("Login", name: 'g_button_login');
   }
 
+  String get g_button_retry {
+    return Intl.message("Retry", name: 'g_button_retry');
+  }
+
   String get error_validation_required_field {
     return Intl.message("Required", name: 'error_validation_required_field');
   }

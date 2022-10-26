@@ -9,6 +9,11 @@ class StateInitial extends CountryListState {
   List<Object> get props => [];
 }
 
+class StateLoading extends CountryListState {
+  @override
+  List<Object> get props => [];
+}
+
 class StateDataLoaded extends CountryListState {
   final List<Country> items;
 

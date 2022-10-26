@@ -31,16 +31,20 @@ class _CountryListWidget extends State<CountryListWidget> {
     Country item = widget.items[index];
     return ListTile(
       leading: Container(
+        color: Theme.of(context).cardColor,
         width: 48,
         height: 48,
         padding: const EdgeInsets.symmetric(vertical: 4.0),
         alignment: Alignment.center,
         child: SvgPicture.network(
           item.flagUrl,
-          semanticsLabel: 'A shark?!',
-          placeholderBuilder: (BuildContext context) => Container(
-              padding: const EdgeInsets.all(30.0),
-              child: const CircularProgressIndicator()),
+          placeholderBuilder: (BuildContext context) =>
+              Container(
+            padding: const EdgeInsets.all(30.0),
+            child: const CircularProgressIndicator(),
+          ),
+          width: 48,
+          height: 48,
         ),
       ),
       title: Text(item.name),

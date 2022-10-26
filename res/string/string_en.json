@@ -5,6 +5,7 @@
   "g_email": "Email",
   "g_password": "Password",
   "g_button_login": "Login",
+  "g_button_retry": "Retry",
   "error_validation_required_field": "Required",
   "error_validation_not_valid": "Not valid",
   "error_password_not_valid": "must contain a-z|A-Z >7 chars",

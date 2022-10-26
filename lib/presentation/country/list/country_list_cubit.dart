@@ -13,6 +13,7 @@ class CountryListCubit extends Cubit<CountryListState> {
   CountryListCubit(this._getCountriesUseCase) : super(StateInitial());
 
   getCountries() async {
+    emit(StateLoading());
     final result = await _getCountriesUseCase.call(null);
     result.fold(
           (failure) => emit(StateError(failure)),
