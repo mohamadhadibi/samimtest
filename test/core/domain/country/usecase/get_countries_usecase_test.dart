@@ -3,17 +3,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:samimtest/core/domain/country/entity/country.dart';
 import 'package:samimtest/core/domain/country/usecase/get_countries_usecase.dart';
+import 'package:samimtest/core/utils/env.dart';
 import 'package:samimtest/data/country/country_remote_datasource_impl.dart';
 import 'package:samimtest/data/country/country_repository_impl.dart';
+import 'package:samimtest/data/country/models/country_rest_client.dart';
 
 void main() async {
-  group('tests for get countries usecase scenarios', () {
+  group('tests for get countries useCase scenarios', () {
     TestWidgetsFlutterBinding.ensureInitialized();
     late GetCountriesUseCase getCountriesUseCase;
 
     Dio dio = Dio();
     BaseOptions options = BaseOptions(
-        baseUrl: 'https://raw.githubusercontent.com/esmaeil-ahmadipour/restcountries/main/json/',
+        baseUrl: baseUrl,
         connectTimeout: 30000,
         receiveTimeout: 30000);
     dio.interceptors.add(LogInterceptor(
@@ -22,6 +24,7 @@ void main() async {
     ));
     dio.options = options;
     final dioAdapter = DioAdapter(dio: dio);
+    RestClient client = RestClient(dio);
 
     setUp(() async {
 
@@ -35,7 +38,7 @@ void main() async {
       );
 
       getCountriesUseCase =
-          GetCountriesUseCase(CountryRepositoryImpl(CountryRemoteDataSourceImpl(dio)));
+          GetCountriesUseCase(CountryRepositoryImpl(CountryRemoteDataSourceImpl(client)));
     });
 
     test('should return Afghanistan country at first when call getCountries', () async {
